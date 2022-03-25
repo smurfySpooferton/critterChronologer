@@ -1,20 +1,52 @@
 package com.udacity.jdnd.course3.critter.user.data;
 
-import com.udacity.jdnd.course3.critter.pet.data.Pet;
+import com.udacity.jdnd.course3.critter.user.EmployeeSkill;
 
 import javax.persistence.*;
-import java.util.List;
+import java.time.DayOfWeek;
+import java.util.Set;
 
 @Table
 @Entity
 public class Employee {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
     private String name;
-    private String phoneNumber;
-    private String notes;
-    @OneToMany(targetEntity = Pet.class)
-    private List<Pet> pets;
+    @ElementCollection
+    private Set<EmployeeSkill> skills;
+    @ElementCollection
+    private Set<DayOfWeek> daysAvailable;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<EmployeeSkill> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(Set<EmployeeSkill> skills) {
+        this.skills = skills;
+    }
+
+    public Set<DayOfWeek> getDaysAvailable() {
+        return daysAvailable;
+    }
+
+    public void setDaysAvailable(Set<DayOfWeek> daysAvailable) {
+        this.daysAvailable = daysAvailable;
+    }
 }
