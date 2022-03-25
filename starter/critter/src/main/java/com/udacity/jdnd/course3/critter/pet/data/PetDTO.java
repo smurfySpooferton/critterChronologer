@@ -1,4 +1,4 @@
-package com.udacity.jdnd.course3.critter.pet.dto;
+package com.udacity.jdnd.course3.critter.pet.data;
 
 import com.udacity.jdnd.course3.critter.pet.PetType;
 
