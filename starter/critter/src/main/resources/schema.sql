@@ -1,0 +1,43 @@
+CREATE TABLE IF NOT EXISTS CustomerDTO
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    name VARCHAR(128) NOT NULL,
+    phoneNumber VARCHAR(128) NOT NULL,
+    notes VARCHAR(255),
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS EmployeeDTO
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    name VARCHAR(128) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS EmployeeSkills
+(
+    employeeId INTEGER NOT NULL,
+    skill VARCHAR(64) NOT NULL,
+    PRIMARY KEY (employeeId, skill),
+    FOREIGN KEY (employeeId) REFERENCES EmployeeDTO(id)
+);
+
+CREATE TABLE IF NOT EXISTS EmployeeTime
+(
+    employeeId INTEGER NOT NULL,
+    dayOfWeek VARCHAR(64) NOT NULL,
+    PRIMARY KEY (employeeId, dayOfWeek),
+    FOREIGN KEY (employeeId) REFERENCES EmployeeDTO(id)
+);
+
+CREATE TABLE IF NOT EXISTS PetDTO
+(
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    type VARCHAR(64) NOT NULL,
+    name VARCHAR(128) NOT NULL,
+    ownerId INTEGER NOT NULL,
+    birthdate DATETIME NOT NULL,
+    notes VARCHAR(255),
+    FOREIGN KEY (ownerId) REFERENCES CustomerDTO(id),
+    PRIMARY KEY (id)
+);
