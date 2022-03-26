@@ -1,7 +1,5 @@
 package com.udacity.jdnd.course3.critter.user.data;
 
-import com.udacity.jdnd.course3.critter.user.EmployeeSkill;
-
 import javax.persistence.*;
 import java.time.DayOfWeek;
 import java.util.Set;
@@ -10,7 +8,7 @@ import java.util.Set;
 @Entity
 public class Employee {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     @ElementCollection

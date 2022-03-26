@@ -1,6 +1,5 @@
 package com.udacity.jdnd.course3.critter.pet.data;
 
-import com.udacity.jdnd.course3.critter.pet.PetType;
 import com.udacity.jdnd.course3.critter.user.data.Customer;
 
 import javax.persistence.*;
@@ -10,8 +9,8 @@ import java.time.LocalDate;
 @Entity
 public class Pet {
     @Id
-    @GeneratedValue
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private PetType type;
     private String name;
     @ManyToOne(targetEntity = Customer.class, optional = false)
@@ -19,11 +18,11 @@ public class Pet {
     private LocalDate birthDate;
     private String notes;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

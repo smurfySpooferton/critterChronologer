@@ -10,19 +10,19 @@ import java.util.List;
 @Entity
 public class Customer {
     @Id
-    @GeneratedValue
-    private long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private String phoneNumber;
     private String notes;
     @OneToMany(targetEntity = Pet.class)
     private List<Pet> pets;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

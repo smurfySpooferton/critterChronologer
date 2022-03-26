@@ -23,12 +23,12 @@ public class ScheduleController {
     }
 
     @GetMapping("/pet/{petId}")
-    public List<ScheduleDTO> getScheduleForPet(@PathVariable long petId) {
+    public List<ScheduleDTO> getScheduleForPet(@PathVariable Long petId) {
         throw new UnsupportedOperationException();
     }
 
     @GetMapping("/employee/{employeeId}")
-    public List<ScheduleDTO> getScheduleForEmployee(@PathVariable long employeeId) {
+    public List<ScheduleDTO> getScheduleForEmployee(@PathVariable Long employeeId) {
         throw new UnsupportedOperationException();
     }
 
