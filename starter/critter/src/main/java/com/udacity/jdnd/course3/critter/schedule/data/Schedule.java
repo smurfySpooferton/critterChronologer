@@ -17,7 +17,7 @@ public class Schedule {
     private Long id;
 
     @ManyToMany(targetEntity = Employee.class)
-    private List<Employee> employee;
+    private List<Employee> employees;
 
     @ManyToMany(targetEntity = Pet.class)
     private List<Pet> pets;
@@ -35,12 +35,12 @@ public class Schedule {
         this.id = id;
     }
 
-    public List<Employee> getEmployee() {
-        return employee;
+    public List<Employee> getEmployees() {
+        return employees;
     }
 
-    public void setEmployee(List<Employee> employee) {
-        this.employee = employee;
+    public void setEmployees(List<Employee> employee) {
+        this.employees = employee;
     }
 
     public List<Pet> getPets() {
